@@ -1,32 +1,10 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
- */
-?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-        </div>
-    </aside>
-    <div class="column column-80">
-        <div class="users form content">
-            <?= $this->Form->create($user) ?>
-            <fieldset>
-                <legend><?= __('Add User') ?></legend>
-                <?php
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('login');
-                    echo $this->Form->control('password');
-                    echo $this->Form->control('photo');
-                    echo $this->Form->control('reset_token');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-        </div>
-    </div>
-</div>
+<h1>Register</h1>
+<!-- Formulário de registro -->
+<?= $this->Form->create($user) ?>
+<?= $this->Form->control('name') ?>
+<?= $this->Form->control('email') ?>
+<?= $this->Form->control('login') ?>
+<?= $this->Form->control('password', ['type' => 'password']) ?>
+<?= $this->Form->control('photo', ['type' => 'file']) ?>
+<?= $this->Form->button(__('Register')) ?>
+<?= $this->Form->end() ?>
