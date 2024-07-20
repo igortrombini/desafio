@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Event\EventInterface;
-use Cake\Mailer\Mailer; // Importação correta da classe Mailer
+use Cake\Mailer\Mailer;
 use Cake\Utility\Security;
 use Cake\Routing\Router;
 
