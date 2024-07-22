@@ -56,7 +56,7 @@ return [
         'webroot' => 'webroot',
         'wwwRoot' => WWW_ROOT,
         //'baseUrl' => env('SCRIPT_NAME'),
-        'fullBaseUrl' => env('FULL_BASE_URL', 'http://localhost:8765'),
+        'fullBaseUrl' => env('FULL_BASE_URL', 'https://b913-200-7-121-129.ngrok-free.app'),
         'imageBaseUrl' => 'img/',
         'cssBaseUrl' => 'css/',
         'jsBaseUrl' => 'js/',
