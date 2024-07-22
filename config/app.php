@@ -56,7 +56,7 @@ return [
         'webroot' => 'webroot',
         'wwwRoot' => WWW_ROOT,
         //'baseUrl' => env('SCRIPT_NAME'),
-        'fullBaseUrl' => false,
+        'fullBaseUrl' => env('FULL_BASE_URL', 'http://localhost:8765'),
         'imageBaseUrl' => 'img/',
         'cssBaseUrl' => 'css/',
         'jsBaseUrl' => 'js/',
@@ -231,6 +231,15 @@ return [
             'tls' => false,
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
         ],
+        'ngrok' => [
+            'className' => 'Smtp',
+            'host' => '0.tcp.sa.ngrok.io', // Substitua com seu subdomínio ngrok
+            'port' => 15525, // Substitua com sua porta ngrok
+            'username' => null,
+            'password' => null,
+            'client' => null,
+            'tls' => false,
+        ],
     ],
 
     /*
@@ -251,6 +260,12 @@ return [
              */
             //'charset' => 'utf-8',
             //'headerCharset' => 'utf-8',
+        ],
+        'ngrok' => [
+            'transport' => 'ngrok',
+            'from' => 'you@localhost',
+            'charset' => 'utf-8',
+            'headerCharset' => 'utf-8',
         ],
     ],
 
@@ -282,12 +297,16 @@ return [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'persistent' => false,
+            'host' => env('DB_HOST', 'localhost'),
+            'username' => env('DB_USERNAME', 'my_app'),
+            'password' => env('DB_PASSWORD', 'secret'),
+            'database' => env('DB_DATABASE', 'my_app'),
             'timezone' => 'UTC',
 
             /*
              * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support, in CakePHP 3.6
              */
-            //'encoding' => 'utf8mb4',
+            'encoding' => env('DB_ENCODING', 'utf8mb4'),
 
             /*
              * If your MySQL server is configured with `skip-character-set-client-handshake`
@@ -325,8 +344,12 @@ return [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'persistent' => false,
+            'host' => env('DB_TEST_HOST', 'localhost'),
+            'username' => env('DB_TEST_USERNAME', 'my_app'),
+            'password' => env('DB_TEST_PASSWORD', 'secret'),
+            'database' => env('DB_TEST_DATABASE', 'test_myapp'),
             'timezone' => 'UTC',
-            //'encoding' => 'utf8mb4',
+            'encoding' => env('DB_TEST_ENCODING', 'utf8mb4'),
             'flags' => [],
             'cacheMetadata' => true,
             'quoteIdentifiers' => false,
