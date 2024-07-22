@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+.header img {
+    width: 40px;
+    height: auto;
+}
+
+.header h1 {
+    margin-top: 1rem;
+    font-size: 24px;
+    font-weight: 600;
+    color: #4a5568;
+    font-family: 'Inter', sans-serif;
+}
+
+.box {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Aumentamos a largura máxima */
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box; /* Definindo box-sizing diretamente */
+}
+
+.box .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem; /* Espaço entre os itens */
+}
+
+.box .form-input {
+    width: 100%;
+    padding: 1.5rem; /* Aumenta o padding para inputs maiores */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Define a fonte dos inputs para 14px */
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    margin-top: 0.5rem;
+    box-sizing: border-box; /* Definindo box-sizing diretamente */   
+}
+
+.box .form-input::placeholder {
+    font-size: 14px; /* Define a fonte do placeholder para 14px */
+    color: #9ca3af; /* Ajusta a cor do placeholder */
+}
+
+.footer {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 14px; /* Define a fonte do footer para 14px */
+    color: #4a5568;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; /* Define a fonte dos links do footer para 14px */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    background-color: #6366f1;
+    color: #ffffff;
+    
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 14px; /* Define a fonte do botão para 14px */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    box-sizing: border-box; /* Definindo box-sizing diretamente */
+}
+
+.button:hover {
+    background-color: #4f46e5;
+}
+
+label, legend {
+    display: block;
+    font-size: 14px; /* Define a fonte das labels e legends para 14px */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    color: black;
+}
+
+*, *:after, *:before {
+    box-sizing: content-box; /* Definindo box-sizing diretamente */
+}
