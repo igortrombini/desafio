@@ -27,11 +27,16 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
 
     public function middleware(MiddlewareQueue $middlewareQueue): MiddlewareQueue
     {
+        $csrf = new CsrfProtectionMiddleware([
+            'httponly' => true,
+            // Configurações adicionais, se necessário
+        ]);
+
         $middlewareQueue
             ->add(new RoutingMiddleware($this))
             ->add(new BodyParserMiddleware())
-            ->add(new CsrfProtectionMiddleware())
-            ->add(new AuthenticationMiddleware($this)); // Adiciona o middleware de autenticação
+            ->add($csrf) // Middleware CSRF
+            ->add(new AuthenticationMiddleware($this));
 
         return $middlewareQueue;
     }
@@ -67,3 +72,4 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         return $service;
     }
 }
+
