@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9fafb;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4a5568;
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+}
+
+.box {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: block;
+    margin-top: 0;
+}
+
+.box .input-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+.box .form-input {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    margin-top: 0.5rem;
+}
+
+.footer {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #4a5568;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    background-color: #6366f1;
+    color: #ffffff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    display: flex; /* Adicionado */
+    align-items: center; /* Adicionado */
+    justify-content: center; /* Adicionado */
+}
+
+.button:hover {
+    background-color: #4f46e5;
+}
+
+label, legend {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    color: black;
+}
