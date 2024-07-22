@@ -1,53 +1,87 @@
-# CakePHP Application Skeleton
+# Desafio
 
-![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+utilizar o cakephp com mysql para fazer um sistema de login e um cadastro de usuários com: nome, email, login, senha e um upload de foto. 
+Cada usuário cadastrado precisa conseguir logar no sistema e ter um painel para ele editar sua senha e sua foto. 
+Na área de login precisa ter um lembrar senha mandando um email para o usuário com o link para trocar sua senha!
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 5.x.
+# Projeto de Autenticação e Dashboard com CakePHP
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+Este projeto é uma aplicação básica de autenticação e gerenciamento de perfil de usuário utilizando o framework CakePHP.
 
-## Installation
+## Funcionalidades
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+- Registro de usuário
+- Login e Logout
+- Esqueci minha senha e redefinição de senha
+- Editar perfil do usuário
+- Alterar senha do usuário
+- Dashboard do usuário
 
-If Composer is installed globally, run
+## Estrutura do Projeto
 
-```bash
-composer create-project --prefer-dist cakephp/app
-```
+### Controladores
 
-In case you want to use a custom app dir name (e.g. `/myapp/`):
+- `UsersController.php`: Controlador principal para ações de usuário como login, registro, esqueci a senha, redefinir senha, editar perfil e alterar senha.
 
-```bash
-composer create-project --prefer-dist cakephp/app myapp
-```
+### Modelos
 
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
+- `User.php`: Entidade de usuário.
+- `UsersTable.php`: Tabela de usuários com validações e regras.
 
-```bash
-bin/cake server -p 8765
-```
+### Visualizações
 
-Then visit `http://localhost:8765` to see the welcome page.
+- `add.php`: Formulário de registro de novo usuário.
+- `edit_profile.php`: Formulário para editar perfil de usuário.
+- `edit_password.php`: Formulário para alterar senha do usuário.
+- `forgot_password.php`: Formulário para solicitar redefinição de senha.
+- `login.php`: Formulário de login do usuário.
+- `reset_password.php`: Formulário para redefinir a senha do usuário.
+- `dashboard.php`: Dashboard do usuário.
 
-## Update
+### Arquivos de Configuração
 
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
+- `app.php`: Configurações principais da aplicação, incluindo configurações de email.
+- `routes.php`: Configurações de rotas da aplicação.
+- `application.php`: Configuração de middleware e serviços de autenticação.
 
-## Configuration
+### Arquivos CSS
 
-Read and edit the environment specific `config/app_local.php` and set up the
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
+- `register.css`: Estilos para formulários de registro e similares.
+- `login.css`: Estilos para o formulário de login.
+- `form.css`: Estilos gerais para formulários.
+- `dashboard.css`: Estilos para o dashboard do usuário.
 
-## Layout
+### Arquivo JavaScript
 
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
+- `script.js`: Função JavaScript para alternar a exibição de seções no dashboard.
+
+## Instalação
+
+1. Clone o repositório para sua máquina local.
+   ```sh
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+
+## Instalação
+
+1. Navegue até o diretório do projeto.
+    cd seu-repositorio
+
+
+2. Instale as dependências do projeto.
+    composer install
+
+
+3. Configure o arquivo `.env` com as credenciais do banco de dados e outras configurações necessárias.
+
+4. Execute as migrações do banco de dados.
+    bin/cake migrations migrate
+
+## Uso
+
+1. Inicie o servidor CakePHP.
+    bin/cake server
+
+
+2. Acesse a aplicação no navegador.
+    http://localhost:8765
+ 
